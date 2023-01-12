@@ -11,7 +11,7 @@ export default class Main extends React.Component {
 
   componentDidMount() {
     this.setState({loading: true})
-		fetch('http://www.omdbapi.com/?apikey=bf74d5d&s=code geass')
+		fetch('https://www.omdbapi.com/?apikey=bf74d5d&s=code geass')
 			.then(response => response.json())
 			.then(data => this.setState({ movies: data.Search, loading: false }))
 	}
@@ -19,7 +19,7 @@ export default class Main extends React.Component {
 	searchMovie = (value, type = 'all') => {
     this.setState({ loading: true })
 		fetch(
-			`http://www.omdbapi.com/?apikey=bf74d5d&s=${value}${
+			`https://www.omdbapi.com/?apikey=bf74d5d&s=${value}${
 				type !== 'all' ? `&type=${type}` : ''
 			}`
 		)
